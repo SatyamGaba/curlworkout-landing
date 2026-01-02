@@ -1,0 +1,109 @@
+---
+const features = [
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>`,
+    title: 'Snap & Track',
+    description: 'Take a photo of your workout and let AI instantly log your exercises, sets, and reps.',
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+    </svg>`,
+    title: 'Progress Analytics',
+    description: 'Detailed charts and insights to visualize your strength gains, volume, and consistency.',
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>`,
+    title: 'AI Form Analysis',
+    description: 'Get real-time feedback on your exercise form to prevent injuries and maximize gains.',
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`,
+    title: 'Workout Timer',
+    description: 'Built-in rest timers and workout duration tracking to optimize your training sessions.',
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+    </svg>`,
+    title: 'Community',
+    description: 'Connect with friends, share achievements, and compete on leaderboards.',
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+    </svg>`,
+    title: 'Apple Watch & Wearables',
+    description: 'Sync with your smartwatch for seamless workout tracking and heart rate monitoring.',
+  },
+];
+---
+
+<section id="features" class="py-20 md:py-32 relative">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/50 to-dark-950"></div>
+  
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 md:mb-16 reveal">
+      <h2 class="section-title text-white mb-4">
+        What does <span class="gradient-text">Curl</span> include?
+      </h2>
+      <p class="section-subtitle mx-auto">
+        Everything you need to track, analyze, and improve your fitness journey.
+      </p>
+    </div>
+    
+    <!-- App Preview with Features -->
+    <div class="grid lg:grid-cols-3 gap-8 items-center">
+      <!-- Left Features -->
+      <div class="space-y-6">
+        {features.slice(0, 3).map((feature, index) => (
+          <div class="card text-center lg:text-right reveal" style={`animation-delay: ${index * 100}ms`}>
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 mb-4 lg:ml-auto" set:html={feature.icon} />
+            <h3 class="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+            <p class="text-dark-400 text-sm">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Center Phone -->
+      <div class="hidden lg:flex justify-center reveal">
+        <div class="relative">
+          <div class="absolute inset-0 bg-primary-500/20 rounded-[3rem] blur-3xl scale-110"></div>
+          <div class="relative w-72 aspect-[9/19] bg-gradient-to-br from-dark-800 to-dark-900 rounded-[2.5rem] p-2 border border-dark-700">
+            <div class="w-full h-full bg-dark-950 rounded-[2rem] overflow-hidden flex items-center justify-center">
+              <div class="text-center p-6">
+                <div class="w-20 h-20 mx-auto bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl flex items-center justify-center mb-4">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div class="text-lg font-bold text-white mb-1">Curl Workout</div>
+                <div class="text-sm text-dark-400">AI-Powered Fitness</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Features -->
+      <div class="space-y-6">
+        {features.slice(3, 6).map((feature, index) => (
+          <div class="card text-center lg:text-left reveal" style={`animation-delay: ${(index + 3) * 100}ms`}>
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary-500/10 text-primary-400 mb-4" set:html={feature.icon} />
+            <h3 class="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+            <p class="text-dark-400 text-sm">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+

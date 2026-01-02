@@ -1,0 +1,66 @@
+---
+const benefits = [
+  {
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`,
+    title: 'Free up your time',
+    description: 'Curl automatically tracks your exercises, sets, reps, and rest time. No need to manually log everything. Just workout and let AI do the rest.',
+    gradient: 'from-blue-500 to-cyan-500',
+  },
+  {
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+    </svg>`,
+    title: 'Integrate with your fitness ecosystem',
+    description: 'Curl syncs with Apple Health, Google Fit, and your favorite fitness wearables. All your data in one place.',
+    gradient: 'from-purple-500 to-pink-500',
+  },
+  {
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+    </svg>`,
+    title: 'Reach your goals effortlessly',
+    description: 'Snap a photo with Curl, and our AI analyzes your form and tracks your progress. Smart recommendations help you hit PRs faster.',
+    gradient: 'from-orange-500 to-red-500',
+  },
+];
+---
+
+<section class="py-20 md:py-32 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 md:mb-16 reveal">
+      <h2 class="section-title text-white mb-4">
+        Why choose <span class="gradient-text">Curl</span>?
+      </h2>
+      <p class="section-subtitle mx-auto">
+        Curl is the most advanced AI workout tracker on the market.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      {benefits.map((benefit, index) => (
+        <div 
+          class="group relative reveal"
+          style={`animation-delay: ${index * 150}ms`}
+        >
+          <!-- Card -->
+          <div class="relative h-full bg-dark-800/30 backdrop-blur-sm rounded-3xl p-8 border border-dark-700/50 hover:border-primary-500/30 transition-all duration-500 overflow-hidden">
+            <!-- Gradient background on hover -->
+            <div class={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+            
+            <!-- Icon -->
+            <div class={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${benefit.gradient} text-white mb-6 shadow-lg`}>
+              <Fragment set:html={benefit.icon} />
+            </div>
+            
+            <!-- Content -->
+            <h3 class="relative text-xl font-bold text-white mb-3">{benefit.title}</h3>
+            <p class="relative text-dark-300 leading-relaxed">{benefit.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
