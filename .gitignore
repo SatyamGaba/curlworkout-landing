@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Astro build outputs
+.astro/
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE/Editor files
+.vscode/
+.cursor/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Package manager locks (uncomment if you don't want to commit these)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Deployment
+.vercel
+.netlify
+.turbo
