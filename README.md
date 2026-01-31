@@ -77,22 +77,6 @@ src/
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 
-## Design Features
-
-### Animations
-
-- **Scroll-triggered animations**: Elements animate when they enter the viewport
-- **Hover effects**: Interactive micro-animations on buttons, cards, and icons
-- **Floating elements**: Subtle floating animations for visual interest
-- **Staggered animations**: Sequential animations for lists and grids
-- **3D transforms**: Perspective-based hover effects on phone mockups
-
-### Design System
-
-- **Colors**: Custom primary (orange) and dark color palettes
-- **Typography**: Outfit font family with various weights
-- **Components**: Reusable card, button, and section components
-- **Gradients**: Beautiful gradient backgrounds and text effects
 
 ## Deployment
 
