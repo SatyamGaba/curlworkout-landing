@@ -1,44 +1,111 @@
 # Curl Workout Landing Page
 
-A modern landing page for Curl Workout - an AI-powered fitness tracking app.
+A modern, animated landing page for Curl Workout - an AI-powered workout tracking app. Built with Next.js 14, TypeScript, React, Tailwind CSS, and Framer Motion.
+
+## Features
+
+- **Modern Stack**: Next.js 14 with App Router, TypeScript, React 18
+- **Beautiful UI**: Tailwind CSS with custom design system
+- **Micro-animations**: Smooth animations powered by Framer Motion
+- **Responsive Design**: Mobile-first approach with full responsiveness
+- **Performance Optimized**: Optimized fonts, images, and code splitting
+- **SEO Ready**: Meta tags, Open Graph, and Twitter cards
 
 ## Tech Stack
 
-- **Astro 5** - Static site generator
-- **Tailwind CSS 4** - Utility-first CSS framework
+- **Framework**: [Next.js 14](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Font**: [Outfit](https://fonts.google.com/specimen/Outfit) via Next.js Font Optimization
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn or pnpm
+
+### Installation
+
+1. Install dependencies:
+
 ```bash
 npm install
+```
+
+2. Run the development server:
+
+```bash
 npm run dev
 ```
 
-Build for production:
-
-```bash
-npm run build
-npm run preview
-```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
 ```
 src/
-├── components/     # Astro components
-├── layouts/        # Layout templates
-├── pages/          # Page routes
-└── styles/
-    └── global.css  # Tailwind config & custom styles
+├── app/
+│   ├── globals.css     # Global styles and Tailwind config
+│   ├── layout.tsx      # Root layout with metadata
+│   └── page.tsx        # Home page
+├── components/
+│   ├── AnimatedSection.tsx  # Reusable scroll animation wrapper
+│   ├── Header.tsx           # Navigation header
+│   ├── Hero.tsx             # Hero section
+│   ├── Features.tsx         # Features grid
+│   ├── WhyChoose.tsx        # Benefits section
+│   ├── DarkMode.tsx         # Dark mode feature showcase
+│   ├── Influencers.tsx      # Influencer testimonials
+│   ├── Testimonials.tsx     # User reviews
+│   ├── Ratings.tsx          # App store ratings
+│   ├── CTA.tsx              # Call to action section
+│   ├── Footer.tsx           # Footer
+│   ├── PhoneMockup.tsx      # Animated phone mockup
+│   └── Icons.tsx            # SVG icons
+├── hooks/
+│   └── useScrollAnimation.ts  # Custom intersection observer hook
+└── lib/
+    └── utils.ts             # Utility functions (cn)
 ```
 
-## Customization
+## Available Scripts
 
-Edit `src/styles/global.css` to customize colors and theme:
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-```css
-@theme {
-  --color-primary-500: #f97316;
-  --color-dark-950: #020617;
-}
+## Design Features
+
+### Animations
+
+- **Scroll-triggered animations**: Elements animate when they enter the viewport
+- **Hover effects**: Interactive micro-animations on buttons, cards, and icons
+- **Floating elements**: Subtle floating animations for visual interest
+- **Staggered animations**: Sequential animations for lists and grids
+- **3D transforms**: Perspective-based hover effects on phone mockups
+
+### Design System
+
+- **Colors**: Custom primary (orange) and dark color palettes
+- **Typography**: Outfit font family with various weights
+- **Components**: Reusable card, button, and section components
+- **Gradients**: Beautiful gradient backgrounds and text effects
+
+## Deployment
+
+The project is ready to deploy on Vercel:
+
+```bash
+npm run build
 ```
+
+Or deploy directly via:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+## License
+
+MIT License - feel free to use this project for your own purposes.
