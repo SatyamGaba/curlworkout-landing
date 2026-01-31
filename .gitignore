@@ -1,49 +1,47 @@
 # Dependencies
-node_modules/
+node_modules
+.pnp
+.pnp.js
 
-# Astro build outputs
-.astro/
-dist/
+# Testing
+coverage
 
-# Environment variables
-.env
-.env.local
-.env.*.local
+# Next.js
+.next/
+out/
 
-# OS-specific files
+# Production
+build
+dist
+
+# Misc
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-*.swp
-*.swo
-*~
+*.pem
 
-# IDE/Editor files
-.vscode/
-.cursor/
-.idea/
-*.sublime-project
-*.sublime-workspace
-*.code-workspace
-
-# Logs
-*.log
+# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-# Package manager locks (uncomment if you don't want to commit these)
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Deployment
+# Vercel
 .vercel
-.netlify
-.turbo
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Editor directories
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
