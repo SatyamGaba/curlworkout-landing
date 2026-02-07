@@ -9,7 +9,7 @@ const navLinks = [
   { name: 'Home', href: '#' },
   { name: 'Features', href: '#features' },
   { name: 'Reviews', href: '#reviews' },
-  { name: 'Download', href: '#download' },
+  { name: 'Try it', href: '#try' },
 ];
 
 export default function Header() {
@@ -32,8 +32,8 @@ export default function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-dark-950/90 backdrop-blur-xl border-b border-dark-800/50 shadow-lg shadow-dark-950/50'
-          : 'bg-transparent'
+          ? 'bg-dark-950/95 backdrop-blur-xl shadow-lg shadow-dark-950/50 border-b border-dark-950'
+          : 'bg-transparent border-b border-transparent'
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +83,9 @@ export default function Header() {
 
           {/* CTA Button */}
           <motion.a
-            href="#download"
+            href="https://app.curlworkoutapp.com"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
@@ -91,11 +93,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             className="btn-primary text-sm"
           >
-            <svg className="w-5 h-5 hidden sm:block" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.523 2H6.477C5.119 2 4 3.12 4 4.477v15.046C4 20.881 5.119 22 6.477 22h11.046C18.881 22 20 20.881 20 19.523V4.477C20 3.12 18.881 2 17.523 2zM12 18.5c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm4-12h-8c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1h8c.55 0 1-.45 1-1v-8c0-.55-.45-1-1-1z" />
-            </svg>
-            <span className="hidden sm:inline">Download App</span>
-            <span className="sm:hidden">Download</span>
+            Try out now
           </motion.a>
         </div>
       </nav>

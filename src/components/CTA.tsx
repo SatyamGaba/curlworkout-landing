@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
-import { BoltIcon, AppleIcon, PlayStoreIcon } from './Icons';
+import { BoltIcon } from './Icons';
 
 export default function CTA() {
   return (
-    <section id="download" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="try" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary-900/30 via-dark-950 to-dark-950" />
       <motion.div
@@ -44,7 +44,7 @@ export default function CTA() {
               transition={{ delay: 0.3 }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
             >
-              Download <span className="gradient-text">Curl Workout</span>
+              Try <span className="gradient-text">Curl Workout</span> now
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -53,44 +53,26 @@ export default function CTA() {
               transition={{ delay: 0.4 }}
               className="text-lg text-dark-300 mb-8 max-w-xl mx-auto"
             >
-              Start your AI-powered fitness journey today. Track workouts, analyze form, and crush
-              your goals.
+              Start your AI-powered fitness journey in seconds. No app store required.
             </motion.p>
 
-            {/* App Store Buttons */}
+            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
+              className="flex items-center justify-center mb-8"
             >
-              {/* App Store */}
               <motion.a
                 href="https://app.curlworkoutapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="group flex items-center gap-3 px-6 py-3 bg-white hover:bg-gray-100 text-dark-900 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-primary-500/30"
               >
-                <AppleIcon className="w-8 h-8 group-hover:scale-110 transition-transform" />
-                <div className="text-left">
-                  <div className="text-xs text-dark-500">Download on the</div>
-                  <div className="text-lg font-semibold">App Store</div>
-                </div>
-              </motion.a>
-
-              {/* Google Play */}
-              <motion.a
-                href="https://app.curlworkoutapp.com"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="group flex items-center gap-3 px-6 py-3 bg-white hover:bg-gray-100 text-dark-900 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center shadow-lg"
-              >
-                <PlayStoreIcon className="w-8 h-8 group-hover:scale-110 transition-transform" />
-                <div className="text-left">
-                  <div className="text-xs text-dark-500">Get it on</div>
-                  <div className="text-lg font-semibold">Google Play</div>
-                </div>
+                Try out now
               </motion.a>
             </motion.div>
 
