@@ -9,8 +9,9 @@ const features = ['Auto-switch', 'OLED optimized', 'Battery saver'];
 export default function DarkMode() {
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
-      {/* Background elements – primary/orange theme */}
+      {/* Background: horizontal gradient with vertical fade at top/bottom for smooth blend into adjacent sections */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary-900/20 via-dark-950 to-orange-900/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-transparent to-dark-950 pointer-events-none" />
       <motion.div
         animate={{
           x: [0, 20, 0],

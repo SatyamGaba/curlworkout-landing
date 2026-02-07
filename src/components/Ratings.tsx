@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
-import { StarIcon, AppleIcon, PlayStoreIcon } from './Icons';
+import { StarIcon } from './Icons';
 
 export default function Ratings() {
   return (
@@ -76,15 +76,14 @@ export default function Ratings() {
             Over <span className="gradient-text">100k</span> 5-star ratings
           </motion.h2>
 
-          {/* Store ratings */}
+          {/* User rating */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-16"
+            className="flex items-center justify-center"
           >
-            {/* App Store */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-4"
@@ -93,7 +92,7 @@ export default function Ratings() {
                 whileHover={{ rotate: 10 }}
                 className="w-12 h-12 bg-dark-800 rounded-xl flex items-center justify-center"
               >
-                <AppleIcon className="w-7 h-7 text-white" />
+                <StarIcon className="w-7 h-7 text-yellow-400" />
               </motion.div>
               <div className="text-left">
                 <motion.div
@@ -105,41 +104,7 @@ export default function Ratings() {
                 >
                   4.8/5
                 </motion.div>
-                <div className="text-sm text-dark-400">App Store</div>
-              </div>
-            </motion.div>
-
-            {/* Divider */}
-            <motion.div
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="hidden sm:block w-px h-12 bg-dark-700"
-            />
-
-            {/* Google Play */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-4"
-            >
-              <motion.div
-                whileHover={{ rotate: -10 }}
-                className="w-12 h-12 bg-dark-800 rounded-xl flex items-center justify-center"
-              >
-                <PlayStoreIcon className="w-7 h-7 text-white" />
-              </motion.div>
-              <div className="text-left">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6 }}
-                  className="text-2xl md:text-3xl font-bold text-white"
-                >
-                  4.7/5
-                </motion.div>
-                <div className="text-sm text-dark-400">Google Play</div>
+                <div className="text-sm text-dark-400">Rated by users</div>
               </div>
             </motion.div>
           </motion.div>
