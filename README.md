@@ -89,7 +89,3 @@ npm run build
 Or deploy directly via:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-
-## License
-
-MIT License - feel free to use this project for your own purposes.
