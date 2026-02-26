@@ -32,6 +32,12 @@ const itemVariants = {
   },
 };
 
+/** Deterministic "random" from seed - same result on server and client to avoid hydration mismatch */
+function seededRandom(seed: number) {
+  const x = Math.sin(seed * 9999) * 10000;
+  return x - Math.floor(x);
+}
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
@@ -64,17 +70,17 @@ export default function Hero() {
             key={i}
             className="absolute w-1 h-1 bg-primary-400/40 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${seededRandom(i * 3) * 100}%`,
+              top: `${seededRandom(i * 3 + 1) * 100}%`,
             }}
             animate={{
               y: [0, -30, 0],
               opacity: [0.3, 0.8, 0.3],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 3 + seededRandom(i * 3 + 2) * 2,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: seededRandom(i * 3 + 3) * 2,
             }}
           />
         ))}
@@ -113,8 +119,7 @@ export default function Hero() {
                 transition={{ delay: 0.6 }}
                 className="text-sm text-dark-300"
               >
-                Loved by <strong className="text-white">5M users</strong> with{' '}
-                <span className="text-yellow-400">&#9733;</span> 4.9 rating
+                Created by experts with<strong className="text-white"> over 10 years of experience</strong>
               </motion.span>
             </motion.div>
 
@@ -123,14 +128,15 @@ export default function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
             >
-              Meet{' '}
+              With{' '}
               <span className="font-cursive text-5xl sm:text-6xl md:text-7xl lg:text-8xl bg-gradient-to-r from-primary-400 via-orange-400 to-primary-500 bg-clip-text text-transparent inline-block pr-4">
                 Curl
               </span>
               <br />
-              Track your workouts
+              Plan, Execute and Track 
               <br />
-              <span className="text-primary-400">with just a picture</span>
+              your
+              <span className="text-primary-400"> gym workouts</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -138,8 +144,8 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg md:text-xl text-dark-300 mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Meet Curl, the AI-powered app for easy workout tracking. Snap a photo, analyze your
-              form, or log your exercises and get instant feedback and progress insights.
+              With Curl, plan with AI, track and execute your workout at gym. Chat with AI, to analyze, modify your
+              workout, or log your exercises and get instant feedback and progress insights.
             </motion.p>
 
             {/* CTA Button */}
