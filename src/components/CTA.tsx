@@ -2,97 +2,86 @@
 
 import { motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
-import { BoltIcon } from './Icons';
 
 export default function CTA() {
   return (
-    <section id="try" className="py-20 md:py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary-900/30 via-dark-950 to-dark-950" />
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.3, 0.2],
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary-500/20 rounded-full blur-3xl"
-      />
+    <section id="try" className="py-24 md:py-32 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[1px] bg-gradient-to-r from-transparent via-dark-600 to-transparent" />
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <motion.div
-            whileHover={{ scale: 1.01 }}
-            className="bg-gradient-to-br from-dark-800/80 to-dark-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-dark-700/50 text-center"
+            whileHover={{ borderColor: 'rgba(249,115,22,0.2)', boxShadow: '0 0 40px rgba(249,115,22,0.08)' }}
+            className="glass-card p-8 md:p-14 text-center transition-all duration-700 relative overflow-hidden"
           >
+            {/* Subtle animated gradient on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.03] via-transparent to-purple-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
             {/* Logo */}
             <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              whileInView={{ scale: 1, rotate: 0 }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
               viewport={{ once: true }}
-              transition={{ type: 'spring', stiffness: 200, delay: 0.2 }}
-              whileHover={{ scale: 1.1, rotate: 10 }}
-              className="w-20 h-20 mx-auto bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary-500/30"
+              transition={{ type: 'spring', stiffness: 200 }}
+              whileHover={{ rotate: 12, scale: 1.1 }}
+              className="w-14 h-14 mx-auto bg-white rounded-2xl flex items-center justify-center mb-8 cursor-pointer shadow-lg shadow-white/10"
             >
-              <BoltIcon className="w-10 h-10 text-white" />
+              <svg className="w-7 h-7 text-dark-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
             </motion.div>
 
-            {/* Text */}
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+              transition={{ delay: 0.15 }}
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight"
             >
-              Try <span className="gradient-text">Curl Workout</span> now
+              Try <span className="gradient-text">Curl</span> today
             </motion.h2>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="text-lg text-dark-300 mb-8 max-w-xl mx-auto"
+              transition={{ delay: 0.25 }}
+              className="text-base text-dark-400 mb-8 max-w-md mx-auto font-light"
             >
               Start your AI-powered fitness journey in seconds. No app store required.
             </motion.p>
 
-            {/* CTA Button */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="flex items-center justify-center mb-8"
+              transition={{ delay: 0.35 }}
+              className="flex items-center justify-center mb-6"
             >
               <motion.a
                 href="https://app.curlworkoutapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-primary-500/30"
+                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(249,115,22,0.2)' }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-primary text-base relative overflow-hidden group"
               >
-                Try out now
+                <span className="relative z-10 flex items-center gap-2">
+                  Get started free
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-7-7l7 7-7 7" />
+                  </svg>
+                </span>
               </motion.a>
             </motion.div>
 
-            {/* Trust badges */}
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              className="text-sm text-dark-400"
+              transition={{ delay: 0.45 }}
+              className="text-xs text-dark-500"
             >
-              By signing up, you agree to our{' '}
-              <a href="#" className="text-primary-400 hover:underline hover:text-primary-300 transition-colors">
-                Terms of Service
-              </a>{' '}
-              and{' '}
-              <a href="#" className="text-primary-400 hover:underline hover:text-primary-300 transition-colors">
-                Privacy Policy
-              </a>
-              . No commitment. Cancel anytime.
+              No commitment. Cancel anytime.
             </motion.p>
           </motion.div>
         </AnimatedSection>
