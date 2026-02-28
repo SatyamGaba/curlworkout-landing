@@ -63,8 +63,8 @@ type ScreenProps = { navigate: (state: ViewState) => void; showToast: (msg: stri
 /* ───────────── SCREENS (Exact Match to Screenshots) ───────────── */
 function HomeScreen({ navigate, showToast }: ScreenProps) {
     return (
-        <div className="h-full bg-[#faf5f0] flex flex-col font-sans overflow-y-auto scrollbar-hide pb-28 text-[#0f0f0f]">
-            <div className="flex items-center justify-between px-5 pt-8 pb-4">
+        <div className="h-full bg-[#faf5f0] flex flex-col font-sans overflow-y-auto pb-28 text-[#0f0f0f]" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            <div className="flex items-center justify-between px-5 pt-14 pb-4">
                 <div className="flex items-center gap-2.5">
                     <div className="w-8 h-8 bg-[#111] rounded-lg flex items-center justify-center"><span className="text-white text-[15px] font-bold">C</span></div>
                     <span className="font-semibold text-[17px]">CurlAI</span>
@@ -113,7 +113,7 @@ function HomeScreen({ navigate, showToast }: ScreenProps) {
 function RoutinesScreen({ navigate, showToast }: ScreenProps) {
     return (
         <div className="h-full bg-[#faf5f0] flex flex-col font-sans overflow-y-auto scrollbar-hide pb-28 text-[#0f0f0f]">
-            <div className="px-5 pt-10 pb-4"><div className="text-[24px] font-bold mb-1">Routines</div><div className="text-[14px] text-[#71717a]">Manage your workouts</div></div>
+            <div className="px-5 pt-14 pb-4"><div className="text-[24px] font-bold mb-1">Routines</div><div className="text-[14px] text-[#71717a]">Manage your workouts</div></div>
             <div className="px-5 space-y-3.5">
                 {[{ name: 'Apex Push: 30-Minute Upper Body Blast', tags: [['Push', 'bg-red-50 text-red-600'], ['Medium', 'bg-yellow-50 text-yellow-600']], ex: '5 exercises', min: '~30 min' }, { name: 'Heavy Metal Pull: Back & Bicep Power', tags: [['Pull', 'bg-blue-50 text-blue-600'], ['Heavy', 'bg-red-50 text-red-600']], ex: '3 exercises', min: '~30 min' }, { name: 'The Back & Bicep Builder', tags: [['Pull', 'bg-blue-50 text-blue-600'], ['Medium', 'bg-yellow-50 text-yellow-600']], ex: '5 exercises', min: '~30 min' }].map((r, i) => (
                     <div key={i} onClick={() => navigate({ type: 'workout_detail', title: r.name })} className="bg-white rounded-[20px] p-5 shadow-sm border border-black/[0.04] cursor-pointer hover:opacity-80 active:scale-[0.98] transition-all">
@@ -130,7 +130,7 @@ function RoutinesScreen({ navigate, showToast }: ScreenProps) {
 function HistoryScreen({ navigate, showToast }: ScreenProps) {
     return (
         <div className="h-full bg-[#faf5f0] flex flex-col font-sans overflow-y-auto scrollbar-hide pb-28 text-[#0f0f0f]">
-            <div className="px-5 pt-10 pb-4"><div className="text-[24px] font-bold mb-1">Workout History</div><div className="text-[14px] text-[#71717a]">Review your past workouts</div></div>
+            <div className="px-5 pt-14 pb-4"><div className="text-[24px] font-bold mb-1">Workout History</div><div className="text-[14px] text-[#71717a]">Review your past workouts</div></div>
             <div className="px-5 pb-4"><div className="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-black/[0.08] rounded-lg"><span className="text-[14px] font-semibold">All Workouts</span><ChevronDownIcon className="w-4 h-4 text-[#71717a]" /></div></div>
             <div className="px-5 space-y-5">
                 {[{ d: 'Sat, Feb 7, 2026', n: 'Apex Push: 30-Minute Upper Body Blast', t: 'Push', tc: 'bg-red-50 text-red-600', time: '8:47 PM', dur: '0:16', sets: '15/15 sets', vol: '3,918 kg' }, { d: 'Tue, Feb 3, 2026', n: 'Heavy Metal Pull: Back & Bicep Power', t: 'Pull', tc: 'bg-blue-50 text-blue-600', time: '2:58 PM', dur: '0:16', sets: '6/9 sets', vol: '2,430 kg' }, { d: 'Sun, Feb 1, 2026', n: 'The Back & Bicep Builder', t: 'Pull', tc: 'bg-blue-50 text-blue-600', time: '8:39 PM', dur: '0:38', sets: '13/15 sets', vol: '3,830 kg' }].map((item, i) => (
@@ -151,7 +151,7 @@ function HistoryScreen({ navigate, showToast }: ScreenProps) {
 function ProfileScreen({ navigate, showToast }: ScreenProps) {
     return (
         <div className="h-full bg-[#faf5f0] flex flex-col font-sans overflow-y-auto scrollbar-hide pb-28 text-[#0f0f0f]">
-            <div className="px-5 pt-10 pb-4"><div className="text-[24px] font-bold mb-1">Profile</div><div className="text-[14px] text-[#71717a]">Manage your profile and preferences</div></div>
+            <div className="px-5 pt-14 pb-4"><div className="text-[24px] font-bold mb-1">Profile</div><div className="text-[14px] text-[#71717a]">Manage your profile and preferences</div></div>
             <div className="px-5 space-y-4">
                 <div className="bg-white rounded-[20px] p-5 shadow-sm border border-black/[0.04]">
                     <div className="text-[15px] font-bold mb-4">Profile Information</div>
@@ -181,8 +181,8 @@ const screens = [HomeScreen, RoutinesScreen, HistoryScreen, ProfileScreen];
 /* ───────────── OVERLAY SCREENS ───────────── */
 function CreateRoutineScreen({ navigate, showToast }: ScreenProps) {
     return (
-        <div className="absolute inset-0 z-[60] bg-[#faf5f0] flex flex-col font-sans overflow-y-auto scrollbar-hide text-[#0f0f0f]">
-            <div className="sticky top-0 pt-12 pb-4 px-5 bg-[#faf5f0] z-10 flex flex-col gap-1">
+        <div className="absolute inset-0 z-[60] bg-[#faf5f0] flex flex-col font-sans overflow-y-auto text-[#0f0f0f]" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            <div className="sticky top-0 pt-14 pb-4 px-5 bg-[#faf5f0] z-10 flex flex-col gap-1">
                 <button onClick={() => navigate({ type: 'tabs', tab: 1 })} className="absolute top-12 left-5 -ml-2 p-2 rounded-full hover:bg-black/5 active:bg-black/10">
                     <ChevronLeftIcon className="w-5 h-5" />
                 </button>
@@ -244,8 +244,8 @@ function CreateRoutineScreen({ navigate, showToast }: ScreenProps) {
 
 function WorkoutDetailScreen({ navigate, title }: { navigate: (s: ViewState) => void, title: string }) {
     return (
-        <div className="absolute inset-0 z-[60] bg-[#faf5f0] flex flex-col font-sans overflow-y-auto scrollbar-hide pb-10 text-[#0f0f0f]">
-            <div className="sticky top-0 pt-12 pb-4 px-5 bg-[#faf5f0] z-10 flex flex-col gap-2">
+        <div className="absolute inset-0 z-[60] bg-[#faf5f0] flex flex-col font-sans overflow-y-auto pb-10 text-[#0f0f0f]" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            <div className="sticky top-0 pt-14 pb-4 px-5 bg-[#faf5f0] z-10 flex flex-col gap-2">
                 <button onClick={() => navigate({ type: 'tabs', tab: 0 })} className="flex items-center gap-1 text-[14px] text-[#52525b] hover:text-black">
                     <ChevronLeftIcon className="w-4 h-4" /> Back to History
                 </button>
@@ -323,9 +323,13 @@ function PhoneMockup({ viewState, setViewState, showToast }: { viewState: ViewSt
 
     return (
         <div className="w-full h-full bg-[#111] rounded-[44px] p-[6px] shadow-2xl">
-            <div className="relative w-full h-full bg-[#faf5f0] rounded-[38px] overflow-hidden flex flex-col font-sans">
-                {/* Dynamic Island */}
-                <div className="absolute top-0 inset-x-0 h-7 flex justify-center z-50"><div className="w-[100px] h-[26px] bg-[#111] rounded-b-[14px]" /></div>
+            <div className="mockup-shell relative w-full h-full bg-[#faf5f0] rounded-[38px] overflow-hidden flex flex-col font-sans">
+                {/* Dynamic Island (iPhone 15 style) */}
+                <div className="absolute top-0 inset-x-0 h-10 flex justify-center z-50 pt-[10px]">
+                    <div className="w-[120px] h-[34px] bg-[#111] rounded-full flex items-center justify-center relative">
+                        <div className="absolute left-[22px] w-[10px] h-[10px] rounded-full bg-[#1a1a2e] ring-1 ring-[#2a2a3e]" />
+                    </div>
+                </div>
                 {/* Screen */}
                 <div className="flex-1 relative">
                     <AnimatePresence mode="wait">
@@ -432,8 +436,8 @@ export default function HeroScrollExperience() {
 
     return (
         <div ref={containerRef} className="relative bg-[#050505]" style={{ height: '350vh' }}>
-            {/* Background Blend at bottom perfectly merging into #050505 background */}
-            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none z-10" />
+            {/* Background Blend at bottom — extended smooth gradient */}
+            <div className="absolute inset-x-0 bottom-0 h-72 pointer-events-none z-10" style={{ background: 'linear-gradient(to top, #050505 0%, #050505 20%, rgba(5,5,5,0.85) 50%, rgba(5,5,5,0.4) 75%, transparent 100%)' }} />
 
             {/* Global Toast Notification */}
             <AnimatePresence>
@@ -452,10 +456,49 @@ export default function HeroScrollExperience() {
 
             <div className="sticky top-0 h-screen overflow-hidden" style={{ perspective: '1200px' }}>
 
-                {/* Glow that intensifies as phone appears */}
+                {/* Glow that intensifies as phone appears — behind mockup (subtle) */}
                 <motion.div style={{ opacity: glowOpacity }} className="absolute inset-0 z-[1] pointer-events-none">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-500/15 rounded-full blur-[120px]" />
-                    <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[100px]" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-500/[0.08] rounded-full blur-[150px]" />
+                    <div className="absolute top-[40%] left-[55%] -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-indigo-500/[0.06] rounded-full blur-[120px]" />
+                </motion.div>
+
+                {/* Phone-specific glow ring (follows phone position — subtle) */}
+                <motion.div
+                    style={{ opacity: phoneOpacity, x: phoneX, y: phoneY, scale: phoneScale }}
+                    className="absolute z-[19] top-1/2 lg:top-1/2 left-1/2 w-[320px] h-[680px] -ml-[160px] -mt-[340px] pointer-events-none transform-gpu"
+                >
+                    <div className="absolute inset-0 -m-12 bg-blue-500/[0.08] rounded-[60px] blur-[60px]" />
+                </motion.div>
+
+                {/* ═══ FLOATING GYM ICONS (faded, behind hero text) ═══ */}
+                <motion.div
+                    style={{ opacity: heroOpacity }}
+                    className="absolute inset-0 z-[5] pointer-events-none overflow-hidden"
+                >
+                    {/* Dumbbell */}
+                    <motion.div animate={{ y: [0, -15, 0], x: [0, 5, 0], rotate: [0, 8, -8, 0] }} transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }} className="absolute top-[15%] left-[10%] opacity-[0.06]">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><path d="M6.5 6.5l11 11" /><path d="M21 21l-1-1" /><path d="M3 3l1 1" /><path d="M18 22l-4-4" /><path d="M6 10l-4-4" /><path d="M14 6l4-4" /><path d="M22 18l-4-4" /><path d="M10 6l-4-4" /></svg>
+                    </motion.div>
+                    {/* Heart / Heartbeat */}
+                    <motion.div animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }} className="absolute top-[20%] right-[12%] opacity-[0.05]">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
+                    </motion.div>
+                    {/* Timer / Stopwatch */}
+                    <motion.div animate={{ y: [0, -18, 0], rotate: [0, -5, 5, 0] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 2 }} className="absolute bottom-[30%] left-[8%] opacity-[0.05] hidden md:block">
+                        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><circle cx="12" cy="13" r="8" /><path d="M12 9v4l2 2" /><path d="M5 3l2 2" /><path d="M19 3l-2 2" /><path d="M12 5V3" /></svg>
+                    </motion.div>
+                    {/* Running figure */}
+                    <motion.div animate={{ y: [0, -12, 0], x: [0, -8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }} className="absolute bottom-[25%] right-[10%] opacity-[0.04] hidden md:block">
+                        <svg width="55" height="55" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><circle cx="17" cy="4" r="2" /><path d="M15.5 7.5l-2.5 3 3.5 4.5-3 3" /><path d="M8 14l-2 4" /><path d="M9.5 10.5l5-1" /></svg>
+                    </motion.div>
+                    {/* Flame */}
+                    <motion.div animate={{ y: [0, -20, 0], scale: [1, 1.08, 1] }} transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 3 }} className="absolute top-[40%] right-[5%] opacity-[0.04]">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" /></svg>
+                    </motion.div>
+                    {/* Water drop */}
+                    <motion.div animate={{ y: [0, -14, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }} className="absolute top-[55%] left-[15%] opacity-[0.04] hidden lg:block">
+                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" /></svg>
+                    </motion.div>
                 </motion.div>
 
                 {/* ═══ HERO TEXT ═══ */}
@@ -477,10 +520,14 @@ export default function HeroScrollExperience() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.8 }}
-                        className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-5"
+                        className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-5 relative"
                     >
                         <span className="text-white">Meet </span>
-                        <span className="gradient-text font-cursive text-7xl sm:text-8xl md:text-9xl lg:text-[140px]" style={{ display: 'inline-block', paddingRight: '0.35em' }}>Curl</span>
+                        <span className="relative inline-block">
+                            {/* Glow behind Curl */}
+                            <span className="absolute inset-0 -m-6 bg-blue-500/25 rounded-full blur-[50px] pointer-events-none" />
+                            <span className="gradient-text font-cursive text-7xl sm:text-8xl md:text-9xl lg:text-[140px] relative" style={{ paddingRight: '0.35em' }}>Curl</span>
+                        </span>
                     </motion.h1>
 
                     <motion.p
@@ -510,15 +557,15 @@ export default function HeroScrollExperience() {
                         scale: phoneScale,
                         x: phoneX,
                     }}
-                    className="absolute z-20 top-1/2 lg:top-[60%] left-1/2 w-[320px] h-[680px] -ml-[160px] -mt-[340px] origin-center lg:origin-[center_right] xl:origin-[center_top] flex items-center justify-center transform-gpu"
+                    className="absolute z-20 top-1/2 lg:top-1/2 left-1/2 w-[320px] h-[680px] -ml-[160px] -mt-[340px] origin-center flex items-center justify-center transform-gpu"
                 >
                     <PhoneMockup viewState={viewState} setViewState={setViewState} showToast={handleShowToast} />
                 </motion.div>
 
-                {/* ═══ LEFT PANEL (description text) ═══ */}
+                {/* ═══ LEFT PANEL — Desktop: side-by-side | Mobile: compact below phone ═══ */}
                 <motion.div
-                    style={{ opacity: panelOpacity, x: panelX, y: panelY }}
-                    className="absolute z-30 lg:z-10 bottom-0 left-0 right-0 lg:bottom-auto lg:top-[60%] lg:-translate-y-1/2 lg:left-[12%] xl:left-[18%] lg:w-[400px] lg:max-w-[40vw] text-center lg:text-left pt-32 pb-8 px-5 lg:p-0 bg-gradient-to-t from-[#050505] via-[#050505]/95 to-transparent lg:bg-none pointer-events-none lg:pointer-events-auto"
+                    style={{ opacity: panelOpacity, x: isMobile ? 0 : panelX, y: isMobile ? 0 : panelY }}
+                    className="absolute z-30 lg:z-10 bottom-0 left-0 right-0 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:left-[8%] xl:left-[14%] lg:w-[380px] xl:w-[420px] lg:max-w-[38vw] text-center lg:text-left pointer-events-none lg:pointer-events-auto"
                 >
                     <AnimatePresence mode="wait">
                         <motion.div
@@ -527,18 +574,18 @@ export default function HeroScrollExperience() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -25 }}
                             transition={{ duration: 0.35 }}
-                            className="space-y-4 lg:space-y-5 pointer-events-auto"
+                            className="px-5 pb-4 pt-3 lg:p-0 space-y-2 lg:space-y-5 pointer-events-auto"
                         >
-                            <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-white mx-auto lg:mx-0">
+                            <div className="hidden lg:inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-white">
                                 {(() => { const Icon = navItems[viewState.type === 'tabs' ? viewState.tab : 0].icon; return <Icon className="w-5 h-5" active />; })()}
                             </div>
-                            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight text-white leading-[1.1]">
-                                {['Track workouts\nnaturally.', 'Your personalized\nroutines.', 'Every set,\nremembered.', 'Your fitness\nidentity.'][viewState.type === 'tabs' ? viewState.tab : 0].split('\n').map((l, i) => <span key={i}>{l}{i === 0 && <br />}</span>)}
+                            <h2 className="text-lg lg:text-4xl xl:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+                                {['Track workouts\nnaturally.', 'Your personalized\nroutines.', 'Every set,\nremembered.', 'Your fitness\nidentity.'][viewState.type === 'tabs' ? viewState.tab : 0].split('\n').map((l, i) => <span key={i}>{l}{i === 0 && <br className="hidden lg:inline" />}{i === 0 && <span className="lg:hidden"> </span>}</span>)}
                             </h2>
-                            <p className="text-base md:text-lg font-light text-[#a1a1aa] leading-relaxed max-w-sm mx-auto lg:mx-0">
+                            <p className="text-xs lg:text-lg font-light text-[#a1a1aa] leading-relaxed max-w-sm mx-auto lg:mx-0">
                                 {['Snap a photo, speak, or type — Curl parses exactly what you did.', 'Build and crush templates for your goals with auto-tracked volume.', 'Every PR, every pump. Deep insights from your workout history.', 'Your streak, your theme, your workflow — fully customized.'][viewState.type === 'tabs' ? viewState.tab : 0]}
                             </p>
-                            <div className="h-[2px] w-10 bg-blue-500 rounded-full mt-6 mx-auto lg:mx-0 hidden lg:block" />
+                            <div className="h-[2px] w-10 bg-blue-500 rounded-full mt-6 hidden lg:block" />
                         </motion.div>
                     </AnimatePresence>
                 </motion.div>

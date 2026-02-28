@@ -69,7 +69,7 @@
     background-clip: text;
     animation: gradientShift 4s linear infinite;
     padding-right: 0.3em;
-    margin-right: -0.3em;
+    margin-right: -0.1em;
   }
 
   @keyframes gradientShift {
@@ -89,6 +89,17 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Hide scrollbars inside phone mockup */
+  .mockup-shell *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+  }
+
+  .mockup-shell * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
 }
 
