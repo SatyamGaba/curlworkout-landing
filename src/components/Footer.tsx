@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { BoltIcon, InstagramIcon, TiktokIcon, XIcon } from './Icons';
+import { InstagramIcon, TiktokIcon, XIcon } from './Icons';
 
 const currentYear = new Date().getFullYear();
 
@@ -20,125 +20,77 @@ const footerLinks = {
 const socialLinks = [
   { icon: InstagramIcon, href: '#', label: 'Instagram' },
   { icon: TiktokIcon, href: '#', label: 'TikTok' },
-  { icon: XIcon, href: '#', label: 'X (Twitter)' },
+  { icon: XIcon, href: '#', label: 'X' },
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
 
 export default function Footer() {
   return (
-    <motion.footer
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-100px' }}
-      variants={containerVariants}
-      className="py-12 border-t border-dark-800"
-    >
+    <footer className="py-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
-          <motion.div variants={itemVariants} className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: 10 }}
-                className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20"
-              >
-                <BoltIcon className="w-6 h-6 text-white" />
-              </motion.div>
-              <span className="text-xl font-bold text-white group-hover:text-primary-400 transition-colors">
-                Curl Workout
-              </span>
+          <div className="md:col-span-2">
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <div className="w-7 h-7 bg-white rounded-lg flex items-center justify-center">
+                <svg className="w-3.5 h-3.5 text-dark-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <span className="text-base font-bold text-white">Curl</span>
             </Link>
-            <p className="text-dark-400 max-w-xs mb-4">
+            <p className="text-sm text-dark-500 max-w-xs mb-4 font-light">
               The AI-powered workout tracker that helps you reach your fitness goals faster.
             </p>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
-              {socialLinks.map((social, index) => (
+            <div className="flex items-center gap-2">
+              {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                  whileHover={{ scale: 1.15, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 bg-dark-800 hover:bg-dark-700 rounded-lg flex items-center justify-center text-dark-400 hover:text-white transition-all duration-300"
+                  whileHover={{ y: -2 }}
+                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-dark-500 hover:text-white hover:border-white/10 transition-all duration-300"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-3.5 h-3.5" />
                 </motion.a>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* Legal Links */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
+          {/* Legal */}
+          <div>
+            <h3 className="text-xs text-dark-500 font-medium mb-3 tracking-wider uppercase">Legal</h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <motion.a
-                    href={link.href}
-                    whileHover={{ x: 5 }}
-                    className="text-dark-400 hover:text-white transition-colors inline-block"
-                  >
+                  <a href={link.href} className="text-sm text-dark-400 hover:text-white transition-colors duration-300">
                     {link.name}
-                  </motion.a>
+                  </a>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Company Links */}
-          <motion.div variants={itemVariants}>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
+          {/* Company */}
+          <div>
+            <h3 className="text-xs text-dark-500 font-medium mb-3 tracking-wider uppercase">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <motion.a
-                    href={link.href}
-                    whileHover={{ x: 5 }}
-                    className="text-dark-400 hover:text-white transition-colors inline-block"
-                  >
+                  <a href={link.href} className="text-sm text-dark-400 hover:text-white transition-colors duration-300">
                     {link.name}
-                  </motion.a>
+                  </a>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Copyright */}
-        <motion.div
-          variants={itemVariants}
-          className="pt-8 border-t border-dark-800"
-        >
-          <p className="text-dark-500 text-sm text-center">
-            &copy; Copyright {currentYear}, All rights reserved
+        <div className="pt-6 border-t border-white/5">
+          <p className="text-dark-600 text-xs text-center">
+            &copy; {currentYear} Curl Workout. All rights reserved.
           </p>
-        </motion.div>
+        </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }

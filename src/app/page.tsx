@@ -1,11 +1,10 @@
 'use client';
 
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
+import InteractiveMockup from '@/components/InteractiveMockup';
 import Influencers from '@/components/Influencers';
 import Features from '@/components/Features';
 import WhyChoose from '@/components/WhyChoose';
-import DarkMode from '@/components/DarkMode';
 import Testimonials from '@/components/Testimonials';
 import Ratings from '@/components/Ratings';
 import CTA from '@/components/CTA';
@@ -16,11 +15,10 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <Hero />
+        <InteractiveMockup />
         <Influencers />
         <Features />
         <WhyChoose />
-        <DarkMode />
         <Testimonials />
         <Ratings />
         <CTA />
