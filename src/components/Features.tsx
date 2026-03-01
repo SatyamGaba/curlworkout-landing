@@ -79,7 +79,7 @@ export default function Features() {
           <span className="text-[11px] text-dark-500 tracking-[0.3em] uppercase font-medium mb-4 block">Features</span>
           <h2 className="section-title text-white mb-4">
             What does{' '}
-            <span className="font-cursive text-4xl md:text-5xl lg:text-6xl gradient-text">Curl</span>{' '}
+            <span className="font-cursive text-4xl md:text-5xl lg:text-6xl gradient-text" style={{ marginRight: '0.05em' }}>Curl</span>{' '}
             include?
           </h2>
           <p className="section-subtitle mx-auto font-light">

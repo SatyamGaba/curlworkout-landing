@@ -55,6 +55,8 @@ const hoverColors = [
 export default function Influencers() {
   return (
     <section className="py-24 md:py-32 relative">
+      {/* Top gradient overlay for seamless blend from mockup section */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#050505] to-transparent pointer-events-none z-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
           <span className="text-[11px] text-dark-500 tracking-[0.3em] uppercase font-medium mb-4 block">Social Proof</span>
